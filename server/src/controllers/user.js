@@ -39,7 +39,7 @@ export const validateCreds = async(req, res) => {
     try{
         if(await bcrypt.compare(req.body.password, user.password)){
             // Create a JWT and send it to the client
-            const token = jwt.sign({user: user.username}, config.jwt.SECRET_KEY)
+            const token = jwt.sign({user_id: user._id, username: user.username}, config.jwt.SECRET_KEY)
             res.status(200).json({token:token, message:'Success'})
         }
         else{

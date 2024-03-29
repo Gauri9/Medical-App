@@ -50,25 +50,22 @@ Content-Type: application/json
 GET http://localhost:5000/product/downloadimages/Deploy123
 
 ###
-GET http://localhost:5000/product/allproducts
+# GET https://medical-app-5gdu.onrender.com/product/allproducts
 
 ###
-GET https://medical-app-5gdu.onrender.com/product/allproducts
+# GET http://192.168.1.101:5000/product/allproducts
 
 ###
-GET http://192.168.1.101:5000/product/allproducts
+# GET http://localhost:5000/product/allproducts
 
 ###
-GET http://localhost:5000/product/allproducts
+# GET http://localhost:5000/product/getproducts
+# Content-Type: application/json
 
-###
-GET http://localhost:5000/product/getproducts
-Content-Type: application/json
-
-{
-    "page": 2,
-    "pageSize": 10
-}
+# {
+#     "page": 2,
+#     "pageSize": 10
+# }
 
 ###
 POST http://localhost:5000/login
@@ -104,7 +101,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:5000/login/validate
+POST https://medical-app-5gdu.onrender.com/login/validate
 Content-Type: application/json
 
 {
@@ -131,7 +128,12 @@ Content-Type: application/json
 GET http://localhost:5000/medicine/addallmedicines
 
 ###
-GET http://localhost:5000/medicine/getmedicinenames
+GET https://medical-app-5gdu.onrender.com/medicine/getmedicinenames
+Content-Type: application/json
+
+{
+    "category": "Biochemics"
+}
 
 ###
 GET http://localhost:5000/medicine/getmedicinedetails
@@ -176,3 +178,50 @@ Content-Type: application/json
 
 ###
 GET http://localhost:5000/order/orderhistory
+
+###
+GET https://gauri-try.df.r.appspot.com/order/orderhistory
+
+###
+GET https://gauri-try.df.r.appspot.com/medicine/getmedicinedetails
+Content-Type: application/json
+
+{
+    "title": "Silicea 6X",
+    "company": "Schwabe"
+}
+
+###
+GET https://gauri-try.df.r.appspot.com/medicine/getmedicinenames
+
+###
+POST https://gauri-try.df.r.appspot.com/order/postorder
+Content-Type: application/json
+
+{
+    "user_id": "65dd8ffc3f33f89b5111f936",
+    "order_items": [
+        {"title": "Calcarea phosphorica 6x google test",
+        "company": "SBL",
+        "package": "Tablets",
+        "size": "6x 25g",
+        "MRP": 105,
+        "discountedPercentage": 10,
+        "quantity": 2
+        },
+        {"title": "Calcarea Flurocia 3x",
+        "company": "Schwabe",
+        "package": "Tablets",
+        "size": "6x 50g",
+        "MRP": 105,
+        "discountedPercentage": 10,
+        "quantity": 3
+        }
+    ],
+    "order_status": "PENDING",
+    "shipping_address": "Sky home PG",
+    "order_total": 210,
+    "order_instruction": "keep it outside the door",
+    "delivery_date": "2024-03-24",
+    "order_timestamp": "2024-03-17"
+}
