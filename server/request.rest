@@ -145,7 +145,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:5000/order/postorder
+POST http://192.168.1.103:5000/order/postorder
 Content-Type: application/json
 
 {
@@ -177,7 +177,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/order/orderhistory
+GET http://192.168.1.103:5000/order/orderhistory
 
 ###
 GET https://gauri-try.df.r.appspot.com/order/orderhistory
