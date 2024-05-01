@@ -72,23 +72,22 @@ POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "username": "Gauri",
+    "username": "gauri@gmail.com",
     "password" : "123"
 }
 
 ###
-GET http://localhost:5000/login/getaddressesbyuser
+GET http://192.168.1.3:5000/login/getaddressesbyuser
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiQW1leWEiLCJpYXQiOjE2OTYzMzk5Mzd9.0cHi06EbJoTtXABajyCxEXjCQet4LR12aAvBwwX7UB0
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjYyNmE3NGFhNWRlMDM1MmFhZmJiMjAxIiwidXNlcm5hbWUiOiJnYXVyaUBnbWFpbC5jb20iLCJpYXQiOjE3MTM5NjE5NjJ9.kFhoun7aetE_MMR-geht6GBP881LNqvzHDLjRJ2Bd08
 
 ###
 POST http://localhost:5000/login/addnewaddress
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiR2F1cmkiLCJpYXQiOjE3MDkwMzQ1MTF9.EIyURkxa2NxQ3GbVJMl-t8xEOn9cuVVJQEN9AuzeU8k
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjYyNmE3NGFhNWRlMDM1MmFhZmJiMjAxIiwidXNlcm5hbWUiOiJnYXVyaUBnbWFpbC5jb20iLCJpYXQiOjE3MTM5NjE5NjJ9.kFhoun7aetE_MMR-geht6GBP881LNqvzHDLjRJ2Bd08
 
 {
-    "newAddress" : "Sky Home PG, Narayan Nagar, Hinjewadi Phase 1, Pune, Maharashtra - 411057"
+    "newAddress" : "New Address...2"
 }
 
 ###
@@ -101,18 +100,23 @@ Content-Type: application/json
 }
 
 ###
-POST https://medical-app-5gdu.onrender.com/login/validate
+POST http://192.168.1.3:5000/login/validate
 Content-Type: application/json
 
 {
-    "username": "Ameya",
-    "password" : "123"
+    "username": "gauri@gmail.com",
+    "password" : "1234"
 }
 
 ###
-GET http://localhost:5000/login/authtest
+GET http://192.168.1.3:5000/login/authtest
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiQW1leWEiLCJpYXQiOjE3MDk5MTM0NjJ9.i5OMCDGo0WrJLyRrIM1sl9uvH_O8wrtJ8yuyUrxLYT8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjYyNmE3NGFhNWRlMDM1MmFhZmJiMjAxIiwidXNlcm5hbWUiOiJnYXVyaUBnbWFpbC5jb20iLCJpYXQiOjE3MTM5NjE5NjJ9.kFhoun7aetE_MMR-geht6GBP881LNqvzHDLjRJ2Bd08
+
+###
+GET http://192.168.1.3:5000/login/getcurrentuser
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjYyNmE3NGFhNWRlMDM1MmFhZmJiMjAxIiwidXNlcm5hbWUiOiJnYXVyaUBnbWFpbC5jb20iLCJpYXQiOjE3MTM5NjE5NjJ9.kFhoun7aetE_MMR-geht6GBP881LNqvzHDLjRJ2Bd08
 
 ###
 POST http://192.168.1.104:5000/product/uploadimages
@@ -128,7 +132,7 @@ Content-Type: application/json
 GET http://localhost:5000/medicine/addallmedicines
 
 ###
-GET https://medical-app-5gdu.onrender.com/medicine/getmedicinenames
+GET http://192.168.1.3:5000/medicine/getmedicinenames
 Content-Type: application/json
 
 {
@@ -136,7 +140,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/medicine/getmedicinedetails
+GET http://192.168.1.3:5000/medicine/getmedicinedetails
 Content-Type: application/json
 
 {
@@ -177,7 +181,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://192.168.1.103:5000/order/orderhistory
+GET http://192.168.1.3:5000/order/orderhistory
 
 ###
 GET https://gauri-try.df.r.appspot.com/order/orderhistory

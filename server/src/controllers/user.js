@@ -32,21 +32,23 @@ export const postLoginCreds = async (req, res) => {
 export const validateCreds = async(req, res) => {
     console.log('inside validateCreds')
     const user = await User.findOne({ username: req.body.username });
+    console.log('user', user)
 
     if(user == null){
-        return res.status(400).send('Cannot find user')
+        return res.status(400).send('Wrong Credentials')
     }
     try{
         if(await bcrypt.compare(req.body.password, user.password)){
             // Create a JWT and send it to the client
             const token = jwt.sign({user_id: user._id, username: user.username}, config.jwt.SECRET_KEY)
+            console.log('token', token)
             res.status(200).json({token:token, message:'Success'})
         }
         else{
-            res.status.send(200).send('Authentication failed!')
+            res.status(400).send('Wrong Credentials')
         }
     }catch{
-        res.status(500).send()
+        res.status(500).send('Some error occured!!')
     }
 
 }
@@ -56,16 +58,28 @@ export const authTest = async(req, res) => {
     console.log('inside authTest...');
 
     // Accessible only if authenticated
-    console.log(req.user)
-    const user = req.user
-    res.json({ message: 'Protected route accessed', user});
+    console.log('req.username', req.username)
+    const username = req.username
+    res.json({ message: 'Protected route accessed', username});
 };
+
+// getCurrentUser
+export const getCurrentUser = async(req, res) => {
+    console.log('inside getCurrentUser...');
+    console.log('req.user_id', req.user_id)
+    res.json({username: req.username, user_id: req.user_id});
+}
 
 //GET addresses by username
 export const getAddressesbyUser = async(req, res) => {
-    console.log('inside getAddressesbyUser...');
+    console.log('inside getAddressesbyUser...');    
 
-    const user = await User.findOne({ username: req.user });
+    console.log('req.username', req.username)
+    const username = req.username
+
+    console.log('username', username)
+
+    const user = await User.findOne({ username: username});
 
     if(user == null){
         return res.status(400).send('Cannot find user')
@@ -81,8 +95,11 @@ export const getAddressesbyUser = async(req, res) => {
 export const postNewAddress = async(req, res) => {
     console.log('inside postNewAddress...');
     try {
-        const {newAddress } = req.body;
-        const user = await User.findOne({ username: req.user });
+        const {newAddress} = req.body;
+        console.log('req.username', req.username)
+        const username = req.username
+        
+        const user = await User.findOne({ username: username });
         if (!user){
             return res.status(404).json({ message: 'User not found' });
         }

@@ -4,6 +4,7 @@ import Order from '../models/Order.js';
 //post new product
 export const postOrderDetails = async (req, res) => {
     console.log('postOrderDetails...')
+    console.log('req.body', req.body)
 
     const {orderDetails} = req.body
     let messagePart1 = "Order Items";

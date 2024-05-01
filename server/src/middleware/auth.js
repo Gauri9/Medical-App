@@ -20,8 +20,10 @@ const authenticateJWT = (req, res, next) =>  {
         console.log(jwtToken)
 
         const payload = jwt.verify(jwtToken, config.jwt.SECRET_KEY);
-        req.user = payload.user; 
-        console.log(req.user);
+        console.log('payload', payload.username)
+        req.username = payload.username; 
+        req.user_id = payload.user_id
+        console.log(req.username);
         next();
 
     } catch (error) {
