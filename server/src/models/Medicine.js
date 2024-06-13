@@ -20,6 +20,16 @@ const medicineSchema = mongoose.Schema({
     }
 })
 
+medicineSchema.index({ title: 1, company: 1 }, { unique: true });
+
 var Medicine = mongoose.model('medicine', medicineSchema)
 
+
 export default Medicine;
+
+// // DELETE ALL
+// Medicine.deleteMany({}).then(function(){
+//     console.log("Data deleted"); // Success
+// }).catch(function(error){
+//     console.log(error); // Failure
+// });
