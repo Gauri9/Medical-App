@@ -1,4 +1,5 @@
 import express from 'express';
+
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken'
 
@@ -7,7 +8,11 @@ import config from '../config/dev.js';
 
 const router = express.Router();
 
-//post login creds 
+/**
+ * post credentials of the new user
+ * @param req {*req.body consists the payload(username, password, address)}  
+ * @param res {*}  
+ */
 export const postLoginCreds = async (req, res) => {
     console.log('inside postLoginCreds')
     try{
@@ -26,9 +31,12 @@ export const postLoginCreds = async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 }
-
-//authenticate 
-// validate: username and pswd
+/**
+ * authenticate/validate: username and pswd
+ * @param {*} req 
+ * @param {*} res 
+ * @returns message 'Success' (if user exist) | 'Wrong Credentials' (if username or pswd is wrong)
+ */
 export const validateCreds = async(req, res) => {
     console.log('inside validateCreds')
     const user = await User.findOne({ username: req.body.username });

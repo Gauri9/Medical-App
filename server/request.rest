@@ -1,83 +1,22 @@
 
-GET http://localhost:5000/product/searchproducts
-Content-Type: application/json
-
-{
-    "searchTerm": "Om"
-}
-
-###
 GET http://localhost:5000/medicine/getsearchresults
 Content-Type: application/json
 
 {
-    "searchTerm": "Bio "
+    "searchTerm": "Bio"
 }
-
-# POST http://localhost:5000/product
-
-###
-POST https://medical-app-5gdu.onrender.com/product
-Content-Type: application/json
-
-{ 
-  "title": "trailMedicine112", 
-  "company": "Torrento Pharmaceuticals", 
-  "quantity":"10pc", 
-  "price": 19.39, 
-  "discountedPrice": 20,
-  "description": "In the PRINCE2 project management method" ,
-  "category": "homeopathic",
-  "availabilityStatus": "yes"
-}
-
-###
-PUT http://localhost:5000/product/updateproduct/Deploy123
-Content-Type: application/json
-
-{
-    "title":"Deploy123",
-    "company": "Torrento Pharmaceuticals updated updated", 
-    "quantity":"10pc", 
-    "price": 19.39, 
-    "discountedPrice": 20,
-    "description": "In the PRINCE2 project management method" ,
-    "category": "homeopathic",
-    "availabilityStatus": "yes"
-}
-
-###
-GET http://localhost:5000/product/downloadimages/Deploy123
-
-###
-# GET https://medical-app-5gdu.onrender.com/product/allproducts
-
-###
-# GET http://192.168.1.101:5000/product/allproducts
-
-###
-# GET http://localhost:5000/product/allproducts
-
-###
-# GET http://localhost:5000/product/getproducts
-# Content-Type: application/json
-
-# {
-#     "page": 2,
-#     "pageSize": 10
-# }
 
 ###
 POST http://localhost:5000/login
 Content-Type: application/json
 
 {
-    "username": "gauri@gmail.com",
+    "username": "gauri123@gmail.com",
     "password" : "123"
 }
 
 ###
-GET http://192.168.1.3:5000/login/getaddressesbyuser
+GET http://localhost:5000/login/getaddressesbyuser
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjYyNmE3NGFhNWRlMDM1MmFhZmJiMjAxIiwidXNlcm5hbWUiOiJnYXVyaUBnbWFpbC5jb20iLCJpYXQiOjE3MTM5NjE5NjJ9.kFhoun7aetE_MMR-geht6GBP881LNqvzHDLjRJ2Bd08
 
@@ -95,26 +34,26 @@ DELETE http://localhost:5000/login/removeAddress
 Content-Type: application/json
 
 {
-    "username": "Gauri",
+    "username": "gauri@gmail.com",
     "index": 1
 }
 
 ###
-POST http://192.168.1.3:5000/login/validate
+POST http://localhost:5000/login/validate
 Content-Type: application/json
 
 {
     "username": "gauri@gmail.com",
-    "password" : "1234"
+    "password" : "123"
 }
 
 ###
-GET http://192.168.1.3:5000/login/authtest
+GET http://localhost:5000/login/authtest
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjYyNmE3NGFhNWRlMDM1MmFhZmJiMjAxIiwidXNlcm5hbWUiOiJnYXVyaUBnbWFpbC5jb20iLCJpYXQiOjE3MTM5NjE5NjJ9.kFhoun7aetE_MMR-geht6GBP881LNqvzHDLjRJ2Bd08
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjYyNmE3NGFhNWRlMDM1MmFhZmJiMjAxIiwidXNlcm5hbWUiOiJnYXVyaUBnbWFpbC5jb20iLCJpYXQiOjE3MTgyOTkzODJ9.Ref3MTc9NWgsWgUanYFkqe3rXlIjkKlHJPnH0PFMTuo
 
 ###
-GET http://192.168.1.3:5000/login/getcurrentuser
+GET http://localhost:5000/login/getcurrentuser
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjYyNmE3NGFhNWRlMDM1MmFhZmJiMjAxIiwidXNlcm5hbWUiOiJnYXVyaUBnbWFpbC5jb20iLCJpYXQiOjE3MTM5NjE5NjJ9.kFhoun7aetE_MMR-geht6GBP881LNqvzHDLjRJ2Bd08
 
@@ -129,10 +68,10 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/medicine/addallmedicines
+# GET http://localhost:5000/medicine/addallmedicines
 
 ###
-GET http://192.168.1.3:5000/medicine/getmedicinenames
+GET http://localhost:5000/medicine/getmedicinenames
 Content-Type: application/json
 
 {
@@ -140,16 +79,16 @@ Content-Type: application/json
 }
 
 ###
-GET http://192.168.1.3:5000/medicine/getmedicinedetails
+GET http://localhost:5000/medicine/getmedicinedetails
 Content-Type: application/json
 
 {
-    "title": "Silicea 6X",
-    "company": "Schwabe"
+    "title": "Calcarea Sulphurica 6X",
+    "company": "SBL"
 }
 
 ###
-POST http://192.168.1.103:5000/order/postorder
+POST http://localhost:5000/order/postorder
 Content-Type: application/json
 
 {
@@ -181,7 +120,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://192.168.1.3:5000/order/orderhistory
+GET http://localhost:5000/order/orderhistory
 
 ###
 GET https://gauri-try.df.r.appspot.com/order/orderhistory
@@ -199,7 +138,7 @@ Content-Type: application/json
 GET https://gauri-try.df.r.appspot.com/medicine/getmedicinenames
 
 ###
-POST https://gauri-try.df.r.appspot.com/order/postorder
+POST https://localhost:5000/order/postorder
 Content-Type: application/json
 
 {
