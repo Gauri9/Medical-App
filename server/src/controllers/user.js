@@ -9,7 +9,8 @@ import config from '../config/dev.js';
 const router = express.Router();
 
 /**
- * post credentials of the new user
+ * Post credentials of the new user in DB
+ * Method: POST
  * @param req {*req.body consists the payload(username, password, address)}  
  * @param res {*}  
  */
@@ -40,8 +41,6 @@ export const postLoginCreds = async (req, res) => {
 export const validateCreds = async(req, res) => {
     console.log('inside validateCreds')
     const user = await User.findOne({ username: req.body.username });
-    console.log('user', user)
-
     if(user == null){
         return res.status(400).send('Wrong Credentials')
     }
